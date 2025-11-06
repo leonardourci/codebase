@@ -1,0 +1,25 @@
+### list users
+GET http://localhost:3000/users
+
+### create user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Leonardo",
+  "lastName": "Urci",
+  "email": "test@gmail.com",
+  "password": "test@123TEST"
+}
+
+### get user by id
+GET http://localhost:3000/users/user_cNJBVWwunZb5GOeUYC_kU
+
+### update user by id
+PATCH http://localhost:3000/users/user_cNJBVWwunZb5GOeUYC_kU
+Content-Type: application/json
+
+{
+  "firstName": "Leonardo Updated"
+}
+
