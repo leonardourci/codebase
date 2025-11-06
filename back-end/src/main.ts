@@ -11,6 +11,18 @@ async function bootstrap() {
     .setTitle('Define Your API Title')
     .setDescription('API description goes here')
     .addTag('Define your tag here')
+    .addBearerAuth(
+      {
+        type: 'http',
+        description: 'Include the returned token from sign-up prefixed with Bearer',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+        name: 'Authorization',
+        in: 'header',
+      },
+      'BearerAuth',
+    )
+    .addSecurityRequirements('BearerAuth')
     .build();
   const documentFactory = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, documentFactory);
