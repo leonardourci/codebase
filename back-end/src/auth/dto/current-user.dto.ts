@@ -17,6 +17,4 @@ export class CurrentUserDto {
    */
   @Validate(UserIdPrefixValidator)
   id: User['id'];
-
-  role?: User['role'];
 }

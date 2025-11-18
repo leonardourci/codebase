@@ -7,16 +7,12 @@ import {
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class CurrentUserOrAdminGuard implements CanActivate {
+export class CurrentUserGuard implements CanActivate {
   canActivate(
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     const request = context.switchToHttp().getRequest();
     const user = request.user;
-
-    if (user?.role?.toLowerCase() === 'admin') {
-      return true;
-    }
 
     const paramUserId = request.params?.id;
 

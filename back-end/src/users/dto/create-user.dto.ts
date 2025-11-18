@@ -20,8 +20,6 @@ export class CreateUserDto {
     minSymbols: 1,
   })
   password: string;
-
-  role?: string;
 }
 
 export class CreateUserResponseDto extends OmitType(User, ['password']) {}

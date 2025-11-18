@@ -41,9 +41,6 @@ export class User {
   @Column({ nullable: true })
   refreshToken: string;
 
-  @Column({ default: 'user' })
-  role?: string;
-
   @BeforeInsert()
   private generateId() {
     this.id = `${USER_ID_PREFIX}${nanoid()}`;

@@ -99,7 +99,6 @@ export class AuthService {
       {
         sub: payload.user.id,
         type: 'refresh',
-        role: payload.user.role,
       },
       {
         secret: this.appConfigService.jwtSecret,
@@ -112,7 +111,6 @@ export class AuthService {
         {
           sub: payload.user.id,
           type: 'access',
-          role: payload.user.role,
         },
         {
           secret: this.appConfigService.jwtSecret,
